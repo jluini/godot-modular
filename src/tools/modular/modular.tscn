@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://tools/modular/modular.gd" type="Script" id=1]
+[ext_resource path="res://tools/modular/top_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tools/modular/console_font.tres" type="DynamicFont" id=3]
+
+[node name="modular" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ui" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="topbar" type="HBoxContainer" parent="ui"]
+anchor_right = 1.0
+anchor_bottom = 0.2
+margin_right = -356.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit" parent="ui" instance=ExtResource( 2 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -356.0
+margin_right = 0.0
+
+[node name="button" parent="ui/quit" index="0"]
+text = "MODULAR_QUIT"
+
+[node name="modules" type="TabContainer" parent="ui"]
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logs" type="Control" parent="ui/modules"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="margin_container" type="MarginContainer" parent="ui/modules/logs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="console" type="TextEdit" parent="ui/modules/logs/margin_container"]
+margin_right = 1016.0
+margin_bottom = 444.0
+custom_fonts/font = ExtResource( 3 )
+readonly = true
+show_line_numbers = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="apps" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ui/quit/button" to="." method="_on_quit_button_pressed"]
+
+[editable path="ui/quit"]

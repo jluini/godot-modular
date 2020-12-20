@@ -1,0 +1,22 @@
+[gd_scene format=2]
+
+[node name="top_button" type="Control"]
+margin_left = 359.0
+margin_right = 714.556
+margin_bottom = 216.0
+rect_min_size = Vector2( 355.556, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+text = "(button text)"
+__meta__ = {
+"_edit_use_anchors_": false
+}

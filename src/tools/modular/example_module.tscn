@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://tools/modular/example_module.gd" type="Script" id=1]
+
+[node name="example_module" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.380392, 0.380392, 0.380392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="."]
+margin_left = 35.4859
+margin_top = 18.2988
+margin_right = 1279.48
+margin_bottom = 139.299
+text = "Example of module"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play_uajari" type="Button" parent="."]
+margin_left = 32.8628
+margin_top = 146.056
+margin_right = 352.863
+margin_bottom = 241.056
+text = "UAJARI"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="play_uajari" to="." method="_on_play_uajari_pressed"]
